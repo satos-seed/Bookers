@@ -1,0 +1,16 @@
+<%= form_for @book do |f| %>
+  <% if @book.errors.any? %>
+    <h4>入力した内容にエラーが<%= @member.errors.count %>件あります</h4>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+    </ul>
+  <% end %>
+
+
+  <p>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  </p>
+
+<% end %>
